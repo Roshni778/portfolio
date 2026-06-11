@@ -5,144 +5,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roshni Verma | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --accent: #38bdf8;
+}
+
+body.light {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background: #f7f9fc;
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
 }
 
-header {
-    background: #2d89ef;
-    color: white;
-    padding: 40px 20px;
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+}
+
+button.toggle {
+    background: var(--accent);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* HERO */
+.hero {
     text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.hero h1 {
+    font-size: 2.8rem;
 }
 
+.hero span {
+    color: var(--accent);
+}
+
+/* SECTIONS */
 .container {
     width: 90%;
     max-width: 1000px;
     margin: auto;
-    padding: 20px 0;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    border-bottom: 2px solid #2d89ef;
-    padding-bottom: 5px;
-}
-
-.job {
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    transition: 0.3s;
 }
 
-.footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-a {
-    color: #2d89ef;
-    text-decoration: none;
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1;}
+}
+
+/* CONTACT FORM */
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button.submit {
+    background: var(--accent);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Roshni Verma</h1>
+<nav>
+    <h3>Roshni</h3>
+    <button class="toggle" onclick="toggleMode()">🌙 Mode</button>
+</nav>
+
+<section class="hero">
+    <h1>Hi, I'm <span>Roshni Verma</span></h1>
     <p>Office Manager | Accountant | Administrator</p>
-    <p>📞 778-682-6955 | 📧 verma052001@gmail.com</p>
-    <a href="https://www.linkedin.com/in/roshni-verma-4a9072" target="_blank">LinkedIn Profile</a>
-</header>
+    <p>📧 verma052001@gmail.com</p>
+</section>
 
 <div class="container">
 
-<section>
-    <h2>About Me</h2>
+<div class="card">
+    <h2>About</h2>
     <p>
-        Detail-oriented Office Manager with experience managing operations, payroll, and administrative systems.
-        Skilled in improving workflows, reducing expenses, and supporting large teams with efficient processes.
+        Experienced Office Manager skilled in operations, payroll, and administration.
+        Proven ability to improve workflows and manage teams efficiently.
     </p>
-</section>
+</div>
 
-<section>
-    <h2>Work Experience</h2>
+<div class="card">
+    <h2>Experience</h2>
+    <p><strong>Office Manager</strong> — Joey Restaurant Group (2024–Present)</p>
+    <p><strong>Accountant</strong> — Harbourview Electric (2023)</p>
+    <p><strong>Broker Assistant</strong> — Fairfax Property (2020–2023)</p>
+</div>
 
-    <div class="job">
-        <h3>Office Manager</h3>
-        <p><strong>Joey Restaurant Group, Canada</strong> (Apr 2024 – Present)</p>
-        <ul>
-            <li>Manage operations for 150+ employees</li>
-            <li>Oversee recruitment, onboarding, payroll, and terminations</li>
-            <li>Improved operations by automating communication systems</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <h3>Accountant & Office Administrator</h3>
-        <p><strong>Harbourview Electric</strong> (Jun 2023 – Dec 2023)</p>
-        <ul>
-            <li>Handled payroll, budgeting, and bank reconciliations</li>
-            <li>Tracked expenses, assets, and financial reports</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <h3>Assistant to Managing Broker</h3>
-        <p><strong>Fairfax Property Management</strong> (Apr 2020 – Mar 2023)</p>
-        <ul>
-            <li>Worked with strata buildings and rental properties</li>
-            <li>Handled communications and tenant requests</li>
-        </ul>
-    </div>
-
-    <div class="job">
-        <h3>Assistant Office Administrator</h3>
-        <p><strong>Acadia College</strong> (Nov 2019 – Mar 2020)</p>
-        <ul>
-            <li>Supported 200+ students with administrative services</li>
-            <li>Maintained records and managed office supplies</li>
-        </ul>
-    </div>
-
-</section>
-
-<section>
+<div class="card">
     <h2>Skills</h2>
     <ul>
-        <li>Payroll & HR Systems (ADP, HRIS)</li>
-        <li>Accounting Tools (QuickBooks)</li>
-        <li>CRM Tools (Salesforce)</li>
-        <li>Property Management (YARDI)</li>
-        <li>MS Office Suite</li>
-        <li>Operations Management</li>
+        <li>QuickBooks</li>
+        <li>ADP / HRIS</li>
+        <li>Salesforce</li>
+        <li>YARDI</li>
+        <li>MS Office</li>
     </ul>
-</section>
+</div>
 
-<section>
-    <h2>Education</h2>
-    <p><strong>Associates in Computer Science</strong></p>
-    <p>Columbia College, Vancouver (Jan 2023)</p>
-</section>
+<div class="card">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button class="submit">Send Message</button>
+    </form>
+</div>
 
 </div>
 
-<div class="footer">
-    <p>© 2026 Roshni Verma | Portfolio</p>
-</div>
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+
+function sendMessage(e) {
+    e.preventDefault();
+    alert("✅ Message sent! (Demo)");
+}
+</script>
 
 </body>
 </html>
